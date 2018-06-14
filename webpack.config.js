@@ -3,20 +3,20 @@ const path = require('path');
 
 const config = {
 
-	// entry: './src/js/index.jsx',
+	// entry: './resources/assets/js/index.jsx',
 	entry: {
-		config: './src/js/config.js',
-		index: './src/js/index.jsx'		
+		// config: './resources/assets/js/config.js',
+		index: ['./resources/assets/js/index.jsx', './resources/assets/sass/app.scss']	
 	},
 
 	output: {
-	    path: path.resolve(__dirname, 'dist'),
-		// publicPath: '/dist/',
+	    path: path.resolve(__dirname, 'public/js/'),
+		publicPath: '/public/js/',
 	    filename: '[name].min.js' // Archivo de salida
 	},
 
 	resolve: {
-	    extensions: ['.js', '.jsx']
+	    extensions: ['.js', '.jsx', '.scss']
 	},
 
 	module: {
@@ -30,7 +30,27 @@ const config = {
 		              	presets: ['react', 'env', 'es2015']
 		          	}
 		        }]
-		    }
+			},
+			{
+				test: /\.scss$/,
+				use: [{
+					loader: 'style-loader', // inject CSS to page
+				  }, {
+					loader: 'css-loader', // translates CSS into CommonJS modules
+				  }, {
+					loader: 'postcss-loader', // Run post css actions
+					options: {
+					  plugins: function () { // post css plugins, can be exported to postcss.config.js
+						return [
+						  require('precss'),
+						  require('autoprefixer')
+						];
+					  }
+					}
+				  }, {
+					loader: 'sass-loader' // compiles Sass to CSS
+				  }]
+			}
 	    ]
 	},
 
