@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Play:400,700|Sunflower:300,500,700");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+h1 {
+  font-family: 'Play', sans-serif;
+  font-size: 30px; }
+
+p {
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 300; }
