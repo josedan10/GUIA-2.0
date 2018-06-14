@@ -30,12 +30,12 @@ module.exports = (env) => {
 					use: [{
 						loader: 'babel-loader',
 						options: {
-							presets: ['react', 'env', 'es2015']
+							presets: ['react', 'env', 'es2015', 'stage-0']
 						}
 					}]
 				}
 			]
-		}
+		},
 
 		devServer: {
 			contentBase: path.join(__dirname, './'),

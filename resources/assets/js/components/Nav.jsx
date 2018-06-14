@@ -12,21 +12,22 @@ export default class Nav extends React.Component {
     }
 
     handleClick() {
-        console.log("Handle works");
-        this.setState({open: !this.state.open});
-        console.log("The menu is " + (this.state.open) ? "opened" : "closed");
+        this.setState({...this.state, open: !this.state.open}); 
     }
 
     render() {
+
+        let stateMenu = (this.state.open) ? "open" : "";
+
         return (
             <nav className="nav-container">
 
-                <a className="menu-actions" href="javascript:;" onClick={this.handleClick}>
+                <a className="menu-actions" href="javascript:;" onClick={this.handleClick.bind(this)}>
                     <i className="icon-icon-menu"></i>
                     <span>MENU</span>
                 </a>
 
-                <ul className="nav-menu">
+                <ul className={"nav-menu " + stateMenu}>
                     <li><a href="">HOME</a></li>
                     <li><a href="">ABOUT US</a></li>
                     <li><a href="">CALENDAR</a></li>
