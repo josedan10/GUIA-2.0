@@ -2,12 +2,110 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 300; }
 
 h1 {
   font-family: 'Play', sans-serif;
   font-size: 30px; }
 
-p {
-  font-family: 'Sunflower', sans-serif;
-  font-weight: 300; }
+[class*="center"] {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+[class*="around"] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+[class*="vertical"] {
+  flex-direction: column; }
+
+[class*="wrapper"] {
+  flex-wrap: wrap; }
+
+@keyframes closeMenu {
+  from {
+    padding: 20px;
+    width: 1700px;
+    height: 1700px; }
+  to {
+    width: 0;
+    height: 0;
+    padding: 0; } }
+
+@keyframes openMenu {
+  from {
+    width: 0;
+    height: 0;
+    padding: 0; }
+  to {
+    width: 100vw;
+    height: 100vh; } }
+
+@keyframes shine {
+  from {
+    mask-position: 150%; }
+  to {
+    mask-position: -50%; } }
+
+.nav-container {
+  position: fixed;
+  right: 0;
+  background: linear-gradient(to right, #21001E, #2E001D); }
+  .nav-container.open {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: all .5s ease; }
+  .nav-container.close {
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transition: all .5s ease; }
+  .nav-container a {
+    text-decoration: none;
+    color: #feeed0; }
+  .nav-container .menu-actions {
+    position: absolute;
+    z-index: 999;
+    top: 10px;
+    right: 30px; }
+
+.show-box {
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden; }
+  .show-box.open {
+    animation: openMenu .5s forwards;
+    opacity: 1; }
+  .show-box.close {
+    animation: closeMenu .5s forwards;
+    opacity: 0; }
+  .show-box .sites-container {
+    width: 100%; }
+    .show-box .sites-container .threeDmensionalLogo {
+      height: 45px; }
+  .show-box .social-networks {
+    overflow: hidden; }
+  .show-box .line-decoration {
+    width: 10%;
+    height: 0;
+    border-top: solid 1px #C2007C; }
+
+.nav-menu {
+  overflow: hidden;
+  list-style: none;
+  height: 90%;
+  width: 100%; }
+  .nav-menu li {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 20px; }
+    .nav-menu li a:hover {
+      mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+      mask-size: 200%;
+      animation: shine 2s infinite; }

@@ -1,8 +1,18 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #08090A;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+
+// Colors
+$purpleDark: #21001E;
+$pinkDark: #2E001D;
+$lightPeach: rgb(254, 238, 208);
+$lightPink: #C2007C;
+
+// Gradients
+$gradientMenu: linear-gradient(to right, $purpleDark, $pinkDark);

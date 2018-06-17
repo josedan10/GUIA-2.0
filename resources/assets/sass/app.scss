@@ -11,6 +11,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 300;
 }
 
 h1 {
@@ -18,9 +21,27 @@ h1 {
   font-size: 30px;
 }
 
-p {
-  font-family: 'Sunflower', sans-serif;
-  font-weight: 300;
+// general styles
+
+[class*="center"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class*="around"] {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+[class*="vertical"] {
+  flex-direction: column;
+}
+
+[class*="wrapper"] {
+  flex-wrap: wrap;
 }
 
 @import 'home';
+@import 'menu';
