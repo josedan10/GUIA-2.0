@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4142"
+   viewBox="0 0 154.16946 110.27252"
+   version="1.1"
+   sodipodi:docname="guia-logo.svg"
+   width="154.16946"
+   height="110.27252"
+   inkscape:version="0.92.1 r15371"
+   inkscape:export-filename="C:\Users\josed\Documents\WebSites\GUIA2.0\public\favicon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata4496">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>GUIALogo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1024"
+     inkscape:window-height="577"
+     id="namedview4494"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.5048888"
+     inkscape:cx="51.984075"
+     inkscape:cy="32.316698"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4142" />
+  <defs
+     id="defs4487">
+    <style
+       id="style4485">.cls-1{fill:#F5F5F5;}</style>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4579"
+       id="linearGradient4581"
+       x1="78.938683"
+       y1="-9.0752468"
+       x2="80.348297"
+       y2="124.83859"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.9085762,0.34215891)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4579">
+      <stop
+         style="stop-color:#1a6dff;stop-opacity:1;"
+         offset="0"
+         id="stop4575" />
+      <stop
+         style="stop-color:#c2007f;stop-opacity:1"
+         offset="1"
+         id="stop4577" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4579"
+       id="linearGradient4723"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.9085762,0.34215891)"
+       x1="78.938683"
+       y1="-9.0752468"
+       x2="80.348297"
+       y2="124.83859" />
+  </defs>
+  <title
+     id="title4489">GUIALogo</title>
+  <rect
+     style="opacity:1;fill:#21001e;fill-opacity:1;stroke:none;stroke-width:1.13385832;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4699"
+     width="205.99529"
+     height="154.16422"
+     x="-25.91291"
+     y="-21.945847"
+     inkscape:export-filename="C:\Users\josed\Documents\WebSites\GUIA2.0\public\favicon.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <g
+     transform="translate(-0.6682853,-0.64691396)"
+     id="g4649"
+     inkscape:export-filename="C:\Users\josed\Documents\WebSites\GUIA2.0\public\favicon.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
+    <path
+       inkscape:connector-curvature="0"
+       id="rect4573"
+       d="M 61.528819,30.111567 C 19.328813,64.751564 -5.510478,95.413284 1.999522,106.62328 c 7.5100011,11.21 45.079222,-0.38187 93.199219,-26.171869 L 87.989757,69.672114 C 49.48976,90.152124 20.520069,99.742271 15.060069,91.582271 9.6000691,83.422271 29.289683,59.95188 62.909679,32.18188 l -1.339844,-2.058594 z m 2.191406,3.240235 c -26.779996,22.79 -42.100312,41.630381 -37.570312,48.400391 4.53,6.769999 27.549833,-0.520303 58.839844,-16.570313 L 79.788585,57.422114 C 56.838584,69.162106 40.789132,74.741567 37.849132,70.361567 c -2.94,-4.38 8.149769,-17.449687 27.759765,-34.179687 l -1.890625,-2.820313 z"
+       style="opacity:1;fill:url(#linearGradient4723);fill-opacity:1;stroke:none;stroke-width:1.13385832;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4633"
+       d="M 141.15968,0.67211401 C 125.01968,0.95211501 95.988821,11.771567 61.528819,30.111567 l 1.38086,2.070313 c 37.780001,-19.94 66.338751,-28.8996087 71.718751,-20.84961 5.38,8.050001 -13.78867,31.029842 -46.638673,58.339844 l 7.208984,10.779297 C 136.63874,46.231406 160.93929,16.092661 153.50929,4.9826608 151.65929,2.2226609 147.93921,0.82211501 142.67921,0.67211401 Z M 114.71827,15.261958 c -9.67,-0.21 -28.119997,6.44961 -50.999998,18.099609 l 1.890625,2.820313 c 22.150001,-11.22 37.829213,-16.178906 40.699213,-11.878906 2.87001,4.3 -7.689519,16.89914 -26.519525,33.11914 l 5.201172,7.759766 C 110.98976,42.861883 125.76813,24.492506 121.30811,17.822505 c -1.12,-1.659998 -3.36984,-2.490547 -6.58984,-2.560547 z"
+       style="opacity:1;fill:url(#linearGradient4581);fill-opacity:1;stroke:none;stroke-width:1.13385832;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

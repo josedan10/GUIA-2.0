@@ -26,8 +26,9 @@
         <div id="nav">
         </div>
 
-        <main class="py-4">
-            @yield('content')
+        <main>
+            @yield('home', "")
+            @yield('about-us')
         </main>
     </div>
 

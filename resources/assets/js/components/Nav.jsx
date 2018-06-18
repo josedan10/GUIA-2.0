@@ -53,7 +53,13 @@ export default class Nav extends React.Component {
                             <a href="">{this.fbLogo}</a>
                         </div>
                         
-                        <a href="">{this.threeDLogo}</a>
+                        <div className="company-logo center">
+                        
+                            <a href="">{this.threeDLogo}</a>
+                            <span>
+                                &reg; Powered by <br/>3Dmensional Group
+                            </span>
+                        </div>
 
                         <span className="line-decoration"></span>
                     </div>

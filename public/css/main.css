@@ -4,11 +4,26 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Sunflower', sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #feeed0; }
+
+html,
+body,
+main {
+  background-color: #161616; }
+
+main,
+.container {
+  width: 100%; }
+
+.container {
+  min-height: 100vh;
+  padding: 30px 80px; }
 
 h1 {
   font-family: 'Play', sans-serif;
-  font-size: 30px; }
+  font-size: 40px;
+  margin-bottom: 30px; }
 
 [class*="center"] {
   display: flex;
@@ -29,8 +44,8 @@ h1 {
 @keyframes closeMenu {
   from {
     padding: 20px;
-    width: 1700px;
-    height: 1700px; }
+    width: 100vw;
+    height: 100vh; }
   to {
     width: 0;
     height: 0;
@@ -54,6 +69,11 @@ h1 {
 .nav-container {
   position: fixed;
   right: 0;
+  z-index: 998;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transition: all .5s ease;
   background: linear-gradient(to right, #21001E, #2E001D); }
   .nav-container.open {
     border-top-left-radius: 0;
@@ -63,8 +83,7 @@ h1 {
   .nav-container.close {
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    transition: all .5s ease; }
+    border-bottom-left-radius: 50%; }
   .nav-container a {
     text-decoration: none;
     color: #feeed0; }
@@ -78,12 +97,19 @@ h1 {
   width: 0;
   height: 0;
   padding: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .5s ease; }
   .show-box.open {
-    animation: openMenu .5s forwards;
-    opacity: 1; }
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity .5s ease; }
   .show-box.close {
-    animation: closeMenu .5s forwards;
+    width: 0;
+    height: 0;
+    padding: 0;
     opacity: 0; }
   .show-box .sites-container {
     width: 100%; }
@@ -91,6 +117,12 @@ h1 {
       height: 45px; }
   .show-box .social-networks {
     overflow: hidden; }
+    .show-box .social-networks a {
+      margin: 0 5px; }
+  .show-box .company-logo {
+    font-size: 10px; }
+    .show-box .company-logo span {
+      margin-left: 5px; }
   .show-box .line-decoration {
     width: 10%;
     height: 0;
@@ -109,3 +141,54 @@ h1 {
       mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
       mask-size: 200%;
       animation: shine 2s infinite; }
+
+.about-us h1 {
+  position: relative;
+  text-align: center; }
+  .about-us h1::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: auto;
+    width: 100px;
+    border-top: 2px solid #C2007C; }
+
+.about-us p {
+  margin-top: 30px;
+  text-align: center; }
+
+@keyframes takeoffAnimation {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(-500px); } }
+
+@keyframes rocketBodyInitializing {
+  from {
+    transform: rotate(2deg); }
+  to {
+    transform: rotate(-2deg); } }
+
+@keyframes rocketFireInitializing {
+  0% {
+    transform: scale(0.5) translateY(5px); }
+  80% {
+    transform: scale(0.75) translateY(5px); }
+  90% {
+    transform: scale(0.7) translateY(5px); }
+  95% {
+    transform: scale(0.75) translateY(5px); }
+  100% {
+    transform: scale(0.5) translateY(5px); } }
+
+.rocket-wrapper.initializing .rocket-body {
+  animation: rocketBodyInitializing .1s infinite;
+  transform-origin: center; }
+
+.rocket-wrapper.initializing .rocket-fire {
+  animation: rocketFireInitializing 3s infinite;
+  transform-origin: center;
+  transform: scale(1) translateY(10px); }
+
+.rocket-wrapper.takeoff {
+  animation: takeoffAnimation 3s ease-in; }
