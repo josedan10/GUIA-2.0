@@ -20,6 +20,9 @@ main,
   min-height: 100vh;
   padding: 30px 80px; }
 
+.btn {
+  border: 1px solid #C2007C; }
+
 h1 {
   font-family: 'Play', sans-serif;
   font-size: 40px;
@@ -181,9 +184,13 @@ h1 {
   100% {
     transform: scale(0.5) translateY(5px); } }
 
+.rocket-wrapper.resting .rocket-fire {
+  visibility: hidden; }
+
 .rocket-wrapper.initializing .rocket-body {
   animation: rocketBodyInitializing .1s infinite;
-  transform-origin: center; }
+  transform-origin: center;
+  visibility: visible; }
 
 .rocket-wrapper.initializing .rocket-fire {
   animation: rocketFireInitializing 3s infinite;
@@ -192,3 +199,27 @@ h1 {
 
 .rocket-wrapper.takeoff {
   animation: takeoffAnimation 3s ease-in; }
+
+.contact input[type="email"],
+.contact input[type="text"],
+.contact textarea {
+  background-color: transparent;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #C2007C; }
+  .contact input[type="email"]:focus,
+  .contact input[type="text"]:focus,
+  .contact textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1); }
+
+.contact .error {
+  border-color: 1px solid red; }
+
+.contact input[type="submit"] {
+  border: none;
+  background-color: transparent;
+  padding-left: 15px; }
+
+.contact textarea {
+  resize: none; }

@@ -31,13 +31,16 @@
 .rocket-wrapper {
 
     &.resting {
-
+        .rocket-fire {
+            visibility: hidden;
+        }
     }
 
     &.initializing {
         .rocket-body {
             animation: rocketBodyInitializing .1s infinite;
             transform-origin: center;
+            visibility: visible;
         }
 
         .rocket-fire {

@@ -1,0 +1,29 @@
+.contact {
+    input[type="email"],
+    input[type="text"],
+    textarea {
+        background-color: transparent;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $lightPink;
+
+        &:focus {
+            background-color: rgba($color: #fff, $alpha: 0.1);
+        }
+    }
+
+    .error {
+        border-color: 1px solid red;
+    }
+
+    input[type="submit"] {
+        border: none;
+        background-color: transparent;
+        padding-left: 15px;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

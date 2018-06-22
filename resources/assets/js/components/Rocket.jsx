@@ -1,5 +1,6 @@
 import React from "react";
 import ReactSVG from "react-svg";
+import Form from "./Form";
 
 export default class Rocket extends React.Component {
 
@@ -11,15 +12,23 @@ export default class Rocket extends React.Component {
         };
     }
 
-    takeOff() {
-        this.setState({rocket: "initializing"});
+    toogleRocket(state) {
+
+        if (state != this.state.rocket)
+            this.setState({rocket: state});
+
     }
 
     render() {
-        return <ReactSVG 
-                    path="./icons/rocket.svg" 
-                    className={"rocket-wrapper " + this.state.rocket}
-                    onClick={this.takeOff.bind(this)}/>;
+        return (
+            <div>
+                <Form toogleRocket={this.toogleRocket.bind(this)}>
+                    <ReactSVG 
+                        path="./icons/rocket.svg" 
+                        className={"rocket-wrapper " + this.state.rocket} />
+                </Form>
+            </div>
+        );
     }
 
 }

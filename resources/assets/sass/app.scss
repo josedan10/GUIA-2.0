@@ -34,6 +34,9 @@ main,
   padding: 30px 80px;
 }
 
+.btn {
+  border: 1px solid $lightPink;
+}
 
 h1 {
   font-family: 'Play', sans-serif;
@@ -67,3 +70,4 @@ h1 {
 @import 'menu';
 @import 'about';
 @import 'rocket';
+@import 'contact';
