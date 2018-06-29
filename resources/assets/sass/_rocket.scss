@@ -8,9 +8,9 @@
 
 @keyframes rocketBodyInitializing {
     from {
-        transform: rotate(2deg);
+        transform: rotate(1deg);
     } to {
-        transform: rotate(-2deg);
+        transform: rotate(-1deg);
     }
 }
 
@@ -29,6 +29,10 @@
 }
 
 .rocket-wrapper {
+
+    height: 70%;
+    max-height: 200px;
+    width: 40%;
 
     &.resting {
         .rocket-fire {

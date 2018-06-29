@@ -7,9 +7,9 @@ export default class Form extends React.Component {
         this.state = {
             haveErrors: false,
             errors: {
-                name: false,
-                email: false,
-                msg: false
+                name: "",
+                email: "",
+                msg: ""
             },
             name: 0,
             email: 0,
@@ -52,22 +52,29 @@ export default class Form extends React.Component {
     handleSubmit(e) {
 
         let input;
-        let children = e.target.children;
+        let children = e.target.querySelectorAll("input, textarea");
         let error = 0;
 
         // Regexs
         let reName = /[\d,\._]/;
         let reEmail = /[\w._%+-]+@[\w.-]+.[A-Za-z]{2,4}/;
+        let errors = {
+            name: "",
+            email: "",
+            msg: ""
+        };
 
         for(let i = 0; i < children.length; i++) {
             input = children[i];
 
-            if (!input.classList.contains("btn")) {
+            if (input.type != "submit") {
 
                 // Basic validate: Can't exist empty inputs
                 if (!input.value.length) {
                     
                     if (!input.classList.contains("error")) input.classList.add("error");
+
+                    errors[input.id] = "Debes completar este campo";
                     error++;
                 }
 
@@ -78,7 +85,8 @@ export default class Form extends React.Component {
                         if (reName.test(input.value)){
 
                             if (!input.classList.contains("error")) input.classList.add("error");
-                            console.log("No uses caracteres especiales");
+                            
+                            errors = {...errors, name: "No uses caracteres especiales"};                            
                             error++;
                         }
 
@@ -87,8 +95,11 @@ export default class Form extends React.Component {
                         // String email validation
                         if (!reEmail.test(input.value)){
                             
-                            if (!input.classList.contains("error")) input.classList.add("error");
-                            console.log("Introduce un formato válido para un correo");
+                            if (!input.classList.contains("error")){
+                                input.classList.add("error");
+                            } 
+
+                            errors = {...errors, email: "Introduce un formato válido para un correo"};
                             error++;
                         }
 
@@ -104,7 +115,7 @@ export default class Form extends React.Component {
 
             // Errors advisors
             alert((error > 1) ? "Tienes " + error + " errores": "Tienes 1 error");
-            this.setState({...this.state, haveErrors: true});
+            this.setState({...this.state, haveErrors: true, errors: errors});
             e.preventDefault();
 
         } else {
@@ -118,21 +129,29 @@ export default class Form extends React.Component {
     }
 
     render() {
+        
         return (
-            <section className="contact">
-                <form className="center vertical" onChange={this.handleFormChange.bind(this)} onSubmit={this.handleSubmit.bind(this)}>
-                
+            <form className="center vertical" onChange={this.handleFormChange.bind(this)} onSubmit={this.handleSubmit.bind(this)}>
+                <div className="input-group center vertical">
                     <input name="name" id="name" type="text" placeholder="Nombre" />
+                    <span className="msg-box">{this.state.errors.name}</span>
+                </div>
+
+                <div className="input-group center vertical">
                     <input name="email" id="email" type="email" placeholder="Correo" />
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tu mensaje"></textarea>
+                    <span className="msg-box">{this.state.errors.email}</span>
+                </div>  
 
-                    <div className="btn center">
-                        <input type="submit" value="Enviar"/>
-                        {this.props.children}
-                    </div>
+                <div className="input-group center vertical">
+                    <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Escribe tu mensaje"></textarea>
+                    <span className="msg-box">{this.state.errors.msg}</span>
+                </div>
 
-                </form>
-            </section>
+                <div className="btn center">
+                    <input type="submit" value="Enviar"/>
+                </div>
+
+            </form>
         );
     }
 }

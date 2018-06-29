@@ -10,10 +10,10 @@ export default class Nav extends React.Component {
             open: ""
         };
 
-        this.igLogo = <ReactSVG path="../icons/instagram.svg" />;
-        this.twtLogo = <ReactSVG path="../icons/twitter.svg" />;
-        this.fbLogo = <ReactSVG path="../icons/facebook.svg" />;
-        this.threeDLogo = <ReactSVG path="../icons/3dmensional.svg" />;
+        this.igLogo = <ReactSVG className="svg-container" path="../icons/instagram.svg" />;
+        this.twtLogo = <ReactSVG className="svg-container" path="../icons/twitter.svg" />;
+        this.fbLogo = <ReactSVG className="svg-container" path="../icons/facebook.svg" />;
+        this.threeDLogo = <ReactSVG className="svg-container" path="../icons/3dmensional.svg" />;
         
     }
 
@@ -26,45 +26,56 @@ export default class Nav extends React.Component {
         let stateMenu = this.state.open;
 
         return (
-            <nav className={"nav-container " + stateMenu}>
+            <nav className={"container " + stateMenu}>
+                <div className="columns">
+                    <a className="menu-actions column col-ml-auto" href="javascript:;" onClick={this.handleClick.bind(this)}>
+                        <i className="icon-icon-menu"></i>
+                        <span>MENU</span>
+                    </a>
+                </div>
 
-                <a className="menu-actions" href="javascript:;" onClick={this.handleClick.bind(this)}>
-                    <i className="icon-icon-menu"></i>
-                    <span>MENU</span>
-                </a>
+                <div className="columns">
+                    <div className={"column container show-box " + stateMenu}>
 
-                <div className={"show-box center wrapper " + stateMenu}>
+                        <div className="columns col-gapless">
 
-                    <ul className="nav-menu center vertical">
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#aboutUs">ABOUT US</a></li>
-                        <li><a href="">CALENDAR</a></li>
-                        <li><a href="">SIRIUS</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
-                    </ul>
+                            <div className="nav-menu-container column col-10 col-mx-auto d-flex">
 
-                    <div className="sites-container around">
-                    
-                        <span className="line-decoration"></span>
+                                <ul className="nav-menu">
+                                    <li className="nav-menu-item d-flex"><a className="nav-menu-link col-mx-auto" href="#home">HOME</a></li>
+                                    <li className="nav-menu-item d-flex"><a className="nav-menu-link col-mx-auto" href="#aboutUs">ABOUT US</a></li>
+                                    <li className="nav-menu-item d-flex"><a className="nav-menu-link col-mx-auto" href="">CALENDAR</a></li>
+                                    <li className="nav-menu-item d-flex"><a className="nav-menu-link col-mx-auto" href="">SIRIUS</a></li>
+                                    <li className="nav-menu-item d-flex"><a className="nav-menu-link col-mx-auto" href="#contact">CONTACT</a></li>
+                                </ul>
 
-                        <div className="social-networks center">
-                            <a href="">{this.igLogo}</a>
-                            <a href="">{this.twtLogo}</a>
-                            <a href="">{this.fbLogo}</a>
+                            </div>
+
+                            <div className="column container sites-container d-flex">
+
+                                
+                                <span className="line-decoration"></span>
+
+                                <div className="columns social-networks">
+                                    <a className="column col-4 d-inline-block" href="">{this.igLogo}</a>
+                                    <a className="column col-4 d-inline-block" href="">{this.twtLogo}</a>
+                                    <a className="column col-4 d-inline-block" href="">{this.fbLogo}</a>
+                                </div>
+                                
+                                <div className="company-logo">
+                                        <a className="d-inline-block" href="">{this.threeDLogo}</a>
+                                        <span className="d-inline-block">
+                                            &reg; Powered by <br/>3Dmensional Group
+                                        </span>
+                                </div>
+
+                                <span className="line-decoration"></span>
+                            
+                            </div>
                         </div>
-                        
-                        <div className="company-logo center">
-                        
-                            <a href="">{this.threeDLogo}</a>
-                            <span>
-                                &reg; Powered by <br/>3Dmensional Group
-                            </span>
-                        </div>
 
-                        <span className="line-decoration"></span>
+
                     </div>
-
-
                 </div>
 
             </nav>

@@ -21,12 +21,11 @@ export default class Rocket extends React.Component {
 
     render() {
         return (
-            <div>
-                <Form toogleRocket={this.toogleRocket.bind(this)}>
-                    <ReactSVG 
-                        path="./icons/rocket.svg" 
-                        className={"rocket-wrapper " + this.state.rocket} />
-                </Form>
+            <div className="form-container center">
+                <Form toogleRocket={this.toogleRocket.bind(this)} />
+                <ReactSVG 
+                    path="./icons/rocket.svg" 
+                    className={"rocket-wrapper " + this.state.rocket} />
             </div>
         );
     }

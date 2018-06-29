@@ -29,6 +29,7 @@
         <main>
             @yield('home', "")
             @yield('about-us')
+            @yield('contact')
         </main>
     </div>
 

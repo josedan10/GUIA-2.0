@@ -17,57 +17,14 @@
   color: $lightPeach;
 }
 
-html,
-body,
-main {
-  background-color: #161616;
-}
-
-// Containers
-main, 
-.container {
-  width: 100%;
-}
-
-.container {
-  min-height: 100vh;
-  padding: 30px 80px;
-}
-
-.btn {
-  border: 1px solid $lightPink;
-}
-
-h1 {
-  font-family: 'Play', sans-serif;
-  font-size: 40px;
-  margin-bottom: 30px;
-}
-
-// general styles
-
-[class*="center"] {
+.svg-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
 }
 
-[class*="around"] {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
-[class*="vertical"] {
-  flex-direction: column;
-}
-
-[class*="wrapper"] {
-  flex-wrap: wrap;
-}
-
-@import 'home';
+@import 'spectre/src/spectre';
+@import 'spectre/src/spectre-icons';
 @import 'menu';
-@import 'about';
 @import 'rocket';
-@import 'contact';

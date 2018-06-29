@@ -11,5 +11,5 @@ ReactDOM.render(
 
 ReactDOM.render(
     <Rocket />,
-    document.getElementById("rocket")
+    document.getElementById("contact")
 );
