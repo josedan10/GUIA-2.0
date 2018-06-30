@@ -3373,6 +3373,9 @@ main {
     align-items: center;
     justify-content: center; }
     .admin-panel .panel-body > .menu {
+      background: transparent;
+      border: none;
+      box-shadow: none;
       min-width: auto; }
       .admin-panel .panel-body > .menu .menu-item a {
         color: #121212; }

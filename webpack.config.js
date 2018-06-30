@@ -8,8 +8,8 @@ module.exports = (env) => {
 		// entry: './resources/assets/js/index.jsx',
 		entry: {
 			// config: './resources/assets/js/config.js',
-			// styles: './resources/assets/sass/app.scss',
-			index: './resources/assets/js/index.jsx'
+			index: './resources/assets/js/index.jsx',
+			backend: './resources/assets/js/backend.jsx'
 		},
 
 		output: {
