@@ -21,7 +21,7 @@ export default class Rocket extends React.Component {
 
     render() {
         return (
-            <div className="form-container center">
+            <div className="wrapper-form d-flex">
                 <Form toogleRocket={this.toogleRocket.bind(this)} />
                 <ReactSVG 
                     path="./icons/rocket.svg" 

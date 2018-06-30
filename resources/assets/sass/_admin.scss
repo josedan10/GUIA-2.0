@@ -1,0 +1,48 @@
+.admin {
+
+}
+
+.admin-panel {
+    left: 0;
+    min-height: 100vh;
+    z-index: 20;
+    border: none;
+
+    .panel-header {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .panel-body {
+        align-items: center;
+        justify-content: center;
+
+        & > .menu {
+            // background: transparent;
+            // border: none;
+            // box-shadow: none;
+            min-width: auto;
+    
+            .menu-item {
+    
+                a {
+                    color: #121212;
+        
+                    &:hover {
+                        text-decoration: none;
+                        color: $primary-color;
+                    }
+                }
+            }    
+        }
+    }
+
+    .avatar {
+        margin: 10px 0;
+    }
+
+    .badge::after {
+        box-shadow: none;
+    }
+}

@@ -18,59 +18,103 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/main.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div id="app" class="admin">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+        <div class="panel col-lg-2 admin-panel fixed bg-secondary">
+            <div class="panel-header d-flex">
+                <figure class="avatar avatar-xl" data-initial="JQ">
+                    @if(false)
+                        {{--  Put here the conditional for the user image  --}}
+                        <img src="img/avatar-1.png" alt="...">
+                    @endif
+                </figure>
+                <div class="panel-title text-center">José Daniel Quintero</div>
             </div>
-        </nav>
+            <div class="panel-body d-flex">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#" class="hide-lg">
+                            <i class="icon icon-2x icon-dashboard"></i> Dashboard
+                        </a>
+                        <a href="#" class="show-lg">
+                            <i class="icon icon-2x icon-dashboard"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="hide-lg">                                    
+                            <i class="icon icon-2x icon-email"></i> Mensajes<span class="badge" data-badge="3"></span>
+                        </a>
+                        <a href="#" class="show-lg">                                    
+                            <i class="icon icon-2x icon-email"></i><span class="badge" data-badge="3"></span>
+                        </a>
+                    </li>
+                    <li class="menu-item">                                    
+                        <div class="dropdown d-inline-block">
+                            <a href="#" class="dropdown-toggle hide-lg" tabindex="0">
+                                <i class="icon icon-2x icon-website"></i> Website
+                                <i class="icon icon-caret"></i>
+                            </a>
+                            <a href="#" class="dropdown-toggle show-lg" tabindex="0">
+                                <i class="icon icon-2x icon-website"></i>
+                                <i class="icon icon-caret"></i>
+                            </a>
+                        
+                            <!-- menu component -->
+                            <ul class="menu">
+                                <li class="menu-item">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Nosotros</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>                             
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="hide-lg">                                    
+                            <i class="icon icon-2x icon-edit2"></i> Sirius
+                        </a>
+                        <a href="#" class="show-lg">                                    
+                            <i class="icon icon-2x icon-edit2"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="hide-lg">
+                        <i class="icon icon-2x icon-calendar"></i> Calendario
+                        </a>
+                        <a href="#" class="show-lg">
+                        <i class="icon icon-2x icon-calendar"></i>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="hide-lg">
+                        <i class="icon icon-2x icon-users"></i> Usuarios
+                        </a>
+                        <a href="#" class="show-lg">
+                        <i class="icon icon-2x icon-users"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }} <i class="icon icon-logout"></i>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+        
 
         <main>
             @yield('content')

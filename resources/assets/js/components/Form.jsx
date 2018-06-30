@@ -72,7 +72,7 @@ export default class Form extends React.Component {
                 // Basic validate: Can't exist empty inputs
                 if (!input.value.length) {
                     
-                    if (!input.classList.contains("error")) input.classList.add("error");
+                    if (!input.classList.contains("error")) input.classList.add("is-error");
 
                     errors[input.id] = "Debes completar este campo";
                     error++;
@@ -84,7 +84,7 @@ export default class Form extends React.Component {
                         // String name validation
                         if (reName.test(input.value)){
 
-                            if (!input.classList.contains("error")) input.classList.add("error");
+                            if (!input.classList.contains("error")) input.classList.add("is-error");
                             
                             errors = {...errors, name: "No uses caracteres especiales"};                            
                             error++;
@@ -96,7 +96,7 @@ export default class Form extends React.Component {
                         if (!reEmail.test(input.value)){
                             
                             if (!input.classList.contains("error")){
-                                input.classList.add("error");
+                                input.classList.add("is-error");
                             } 
 
                             errors = {...errors, email: "Introduce un formato válido para un correo"};
@@ -131,27 +131,31 @@ export default class Form extends React.Component {
     render() {
         
         return (
-            <form className="center vertical" onChange={this.handleFormChange.bind(this)} onSubmit={this.handleSubmit.bind(this)}>
-                <div className="input-group center vertical">
-                    <input name="name" id="name" type="text" placeholder="Nombre" />
-                    <span className="msg-box">{this.state.errors.name}</span>
-                </div>
+            <div className="form-container">
+                <form className="" onChange={this.handleFormChange.bind(this)} onSubmit={this.handleSubmit.bind(this)}>
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="name">Nombre</label>
+                        <input className="form-input" name="name" id="name" type="text" placeholder="Jose Quintero" />
+                        <span className="form-input-hint">{this.state.errors.name}</span>
+                    </div>
 
-                <div className="input-group center vertical">
-                    <input name="email" id="email" type="email" placeholder="Correo" />
-                    <span className="msg-box">{this.state.errors.email}</span>
-                </div>  
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="email">Correo</label>
+                        <input className="form-input"  name="email" id="email" type="email" placeholder="mi-correo@mail.com" />
+                        <span className="form-input-hint">{this.state.errors.email}</span>
+                    </div>  
 
-                <div className="input-group center vertical">
-                    <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Escribe tu mensaje"></textarea>
-                    <span className="msg-box">{this.state.errors.msg}</span>
-                </div>
+                    <div className="form-group">
+                        <label className="form-label" htmlFor="msg">Cuéntanos tus dudas</label>
+                        <textarea className="form-input"  name="msg" id="msg" cols="30" rows="10" placeholder="Escribe tu mensaje"></textarea>
+                        <span className="form-input-hint">{this.state.errors.msg}</span>
+                    </div>
 
-                <div className="btn center">
-                    <input type="submit" value="Enviar"/>
-                </div>
+                    
+                    <input className="btn centered" type="submit" value="Enviar"/>                
 
-            </form>
+                </form>
+            </div>
         );
     }
 }

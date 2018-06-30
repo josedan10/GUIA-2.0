@@ -6,6 +6,9 @@
 
 // Variables
 @import "variables";
+@import 'icons';
+@import 'spectre/src/spectre';
+@import 'spectre/src/spectre-icons';
 
 * {
   padding: 0;
@@ -14,7 +17,12 @@
 
   font-family: 'Sunflower', sans-serif;
   font-weight: 300;
-  color: $lightPeach;
+  // color: $lightPeach;
+  color: #121212;
+}
+
+body {
+  background-color: #fff;
 }
 
 .svg-container {
@@ -23,8 +31,33 @@
   justify-content: center;
 }
 
+.main-section {
+  padding: 25px;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+}
 
-@import 'spectre/src/spectre';
-@import 'spectre/src/spectre-icons';
-@import 'menu';
+.decorated-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    width: 150px;
+    height: 0;
+    border-top: 1px solid $lightPink;
+  }  
+}
+// @import 'menu';
+@import 'aboutUs';
+@import 'contact';
 @import 'rocket';
+
+@import 'login';
+@import 'admin';

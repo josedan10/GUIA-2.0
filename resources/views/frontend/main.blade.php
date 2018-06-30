@@ -2,7 +2,7 @@
 
 @section('home')
 
-    <section class="home container" id="home">
+    <section class="home container main-section" id="home">
 
         
        
@@ -12,9 +12,9 @@
 
 @section('about-us')
 
-    <section class="about-us container" id="aboutUS">
+    <section class="about-us d-flex main-section" id="aboutUS">
 
-        <h1 class="center">Nosotros</h1>
+        <h1 class="center decorated-title">Nosotros</h1>
 
         <p>Desde hace más de veinte años, el Grupo Universitario de Investigaciones Astronómicas de la Universidad Simón Bolívar ha mantenido de manera ininterrumpida su mirada en los cielos, observando y aprendiendo sobre todo lo que yace allí afuera en el insondable vacío del espacio, el Cosmos.</p>
 
@@ -24,6 +24,6 @@
 @endsection
 
 @section('contact')
-    <section class="contact container center" id="contact">
+    <section class="contact d-flex main-section" id="contact">
     </section>
 @endsection
