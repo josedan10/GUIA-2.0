@@ -35,9 +35,7 @@ export default class Nav extends React.Component {
                 </div>
 
                 <div className="columns">
-                    <div className={"column container show-box " + stateMenu}>
-
-                        <div className="columns col-gapless">
+                    <div className={"column show-box " + stateMenu}>
 
                             <div className="nav-menu-container column col-10 col-mx-auto d-flex">
 
@@ -51,15 +49,15 @@ export default class Nav extends React.Component {
 
                             </div>
 
-                            <div className="column container sites-container d-flex">
+                            <div className="sites-container d-flex">
 
                                 
                                 <span className="line-decoration"></span>
 
-                                <div className="columns social-networks">
-                                    <a className="column col-4 d-inline-block" href="">{this.igLogo}</a>
-                                    <a className="column col-4 d-inline-block" href="">{this.twtLogo}</a>
-                                    <a className="column col-4 d-inline-block" href="">{this.fbLogo}</a>
+                                <div className="social-networks">
+                                    <a className="d-inline-block" href="">{this.igLogo}</a>
+                                    <a className="d-inline-block" href="">{this.twtLogo}</a>
+                                    <a className="d-inline-block" href="">{this.fbLogo}</a>
                                 </div>
                                 
                                 <div className="company-logo">
@@ -74,9 +72,7 @@ export default class Nav extends React.Component {
                             </div>
                         </div>
 
-
                     </div>
-                </div>
 
             </nav>
         );

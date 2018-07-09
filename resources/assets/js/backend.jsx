@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AdminPanel from './components/AdminPanel';
+import MenuAdmin from './components/MenuAdmin';
 
 ReactDOM.render(
-    <AdminPanel />,
+    <MenuAdmin />,
     document.getElementById('admin-panel')
 );

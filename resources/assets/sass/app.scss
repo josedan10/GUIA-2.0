@@ -1,7 +1,7 @@
 
 // Fonts
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-@import url('https://fonts.googleapis.com/css?family=Play:400,700|Sunflower:300,500,700');
+@import url('https://fonts.googleapis.com/css?family=Play:400,700|Titillium+Web:300,400,700&subset=latin-ext');
 
 
 // Variables
@@ -15,14 +15,23 @@
   margin: 0;
   box-sizing: border-box;
 
-  font-family: 'Sunflower', sans-serif;
-  font-weight: 300;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
   // color: $lightPeach;
   color: #121212;
 }
 
 body {
   background-color: #fff;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  
+  justify-content: center;
+  align-items: center;
+
 }
 
 .svg-container {
@@ -54,10 +63,16 @@ body {
     border-top: 1px solid $lightPink;
   }  
 }
+
+.grid {
+  display: grid;
+}
+
 // @import 'menu';
-@import 'aboutUs';
-@import 'contact';
-@import 'rocket';
+// @import 'aboutUs';
+// @import 'contact';
+// @import 'rocket';
 
 @import 'login';
 @import 'admin';
+@import 'responsive-backend';
