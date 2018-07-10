@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class AdminController extends Controller
@@ -21,19 +22,36 @@ class AdminController extends Controller
     //Users functions
 
     public function users() {
-        return view('backend.users.list');
+        $users = User::all();
+        return view('backend.users.list', ['users' => $users]);
     }
 
     public function addUser(Request $request) {
-        
-        dd($request);
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->admin = $request->admin;
+        $user->admin = ($request->admin) ? 1 : 0;
+        $user->available = ($request->available) ? 1 : 0;
+        $user->password = Hash::make(str_random(8));
+
+        //Send the password by email, and send the link to change the password
+        $password = $user->password;
 
         $user->save();
-        dd(User::all());
+        return redirect(route('users'));
+    }
+
+    public function updateUser(Request $request) {
+
+        $user = User::find($request->id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->admin = ($request->admin) ? 1 : 0;
+        $user->available = ($request->available) ? 1 : 0;
+
+        $user->save();
+        return redirect(route('users'));
     }
 }

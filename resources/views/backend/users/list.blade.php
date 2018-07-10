@@ -16,53 +16,48 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Correo</th>
-                        <th>Tipo de usuario</th>
-                        <th>Fecha de creación</th>
-                        <th>Actions</th>
+                        <th>Tipo</th>
+                        <th>Creación</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
     
                 <tbody>
-                    <tr>
-                        <th>José Daniel Quintero</th>
-                        <th>josedanq100@gmail.com</th>
-                        <th>admin</th>
-                        <th>01/01/2018</th>
-                        <th>
-                            <i class="icon icon-edit"></i>
-                            <i class="icon icon-delete"></i>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Celeste Méndez</th>
-                        <th>sracarmen@yahoo.com</th>
-                        <th>admin</th>
-                        <th>01/01/2018</th>
-                        <th>
-                            <i class="icon icon-edit"></i>
-                            <i class="icon icon-delete"></i>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>José Daniel Quintero</th>
-                        <th>josedanq100@gmail.com</th>
-                        <th>admin</th>
-                        <th>01/01/2018</th>
-                        <th>
-                            <i class="icon icon-edit"></i>
-                            <i class="icon icon-delete"></i>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Celeste Méndez</th>
-                        <th>sracarmen@yahoo.com</th>
-                        <th>admin</th>
-                        <th>01/01/2018</th>
-                        <th>
-                            <i class="icon icon-edit"></i>
-                            <i class="icon icon-delete"></i>
-                        </th>
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <th>{{ $user->name }}</th>
+                            <th>{{ $user->email }}</th>
+                            <th>{{ ($user->admin) ? 'admin' : 'editor' }}</th>
+                            <th>{{ date("d M Y", strtotime($user->created_at)) }}</th>
+                            <th>
+                                <a href="{{ 'users/'.$user->id.'/edit' }}">
+                                    <i class="icon icon-edit"></i>
+                                </a>
+
+                                <a href="">
+                                    <i class="icon icon-message"></i>
+                                </a>
+
+                                <a href="{{ 'users/'.$user->id.'/available' }}">
+                                    @if($user->available) 
+                                        <i class="icon icon-stop"></i>
+                                    @else
+                                        <i class="icon icon-stop text-error"></i>
+                                    @endif
+                                </a>
+
+                                <a href="{{ 'users/'.$user->id.'/delete' }}" onclick="{{ 'event.preventDefault();
+                                    document.getElementById(\'delete-'.$user->id.'-form\').submit();' }}">
+                                    <i class="icon icon-delete"></i>
+                                </a>
+    
+                                <form id="{{ 'delete-'.$user->id.'-form' }}" action="{{ 'users/'.$user->id.'/delete' }}" method="POST" style="display: none;">
+                                    {{ method_field('DELETE') }}
+                                    @csrf
+                                </form>
+                            </th>
+                        </tr>
+                    @endforeach
                 </tbody>
     
             </table>
