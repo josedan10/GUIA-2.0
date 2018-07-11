@@ -46,8 +46,7 @@
                                     @endif
                                 </a>
 
-                                <a href="{{ 'users/'.$user->id.'/delete' }}" onclick="{{ 'event.preventDefault();
-                                    document.getElementById(\'delete-'.$user->id.'-form\').submit();' }}">
+                                <a href="{{ 'users/'.$user->id.'/delete' }}" onclick="{{ 'deleteUser(event,\''.$user->name.'\','.$user->id.')' }}">
                                     <i class="icon icon-delete"></i>
                                 </a>
     
@@ -62,6 +61,18 @@
     
             </table>
         </div>
-    </section>
 
+        <div id="modal" class="modal">
+            <a href="javascript:;" onclick="closeModal()" class="modal-overlay float-right" aria-label="Close"></a>
+            <div class="modal-container">
+                ¿Deseas eliminar este usuario?
+                <br> <h5 id="modal-userName"></h5>
+                
+                <div class="form-group">
+                    <button id="modalBtnSend" class="btn btn-primary">Sí</button>
+                    <button onclick="closeModal()" class="btn btn-primary">No</button>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

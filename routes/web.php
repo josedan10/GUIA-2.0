@@ -49,4 +49,10 @@ Route::prefix('/admin')->group(function() {
 
         return redirect(route('users'));
     });
+
+    // Website
+
+    Route::view('website/home', 'backend.website.home')->name('website-home');
+    Route::view('website/nosotros', 'backend.website.nosotros')->name('website-nosotros');
+    Route::view('website/contacto', 'backend.website.contacto')->name('website-contacto');
 });

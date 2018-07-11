@@ -53,5 +53,6 @@
     </div>
 
     <script src="{{ asset('js/backend.min.js') }}"></script>
+    <script src="{{ asset('js/triggers.js') }}"></script>
 </body>
 </html>
