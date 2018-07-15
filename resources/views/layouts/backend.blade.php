@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app" class="admin">
-        <div class="col-2 col-xl-3 col-xs-4 fixed bg-secondary">
+        <div class="col-2 fixed bg-secondary">
             <div class="panel admin-panel">
                 <div class="panel-header d-flex">
                     <figure class="avatar avatar-xl c-hand" data-initial="JQ">

@@ -14,7 +14,7 @@
 
     <section class="about-us d-flex main-section" id="aboutUS">
 
-        <h1 class="center decorated-title">Nosotros</h1>
+        <h1 class="center decorated-title">{{ $nosotros->title }}</h1>
 
         <p>Desde hace más de veinte años, el Grupo Universitario de Investigaciones Astronómicas de la Universidad Simón Bolívar ha mantenido de manera ininterrumpida su mirada en los cielos, observando y aprendiendo sobre todo lo que yace allí afuera en el insondable vacío del espacio, el Cosmos.</p>
 

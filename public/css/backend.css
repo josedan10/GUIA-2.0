@@ -3282,6 +3282,9 @@ main {
   .login-container .logo {
     height: 100%; }
 
+* {
+  font-size: 14px; }
+
 .admin {
   min-height: 100vh;
   width: 100vw; }
@@ -3391,6 +3394,11 @@ main {
 .form form {
   width: 100%;
   height: 100%; }
+  .form form textarea,
+  .form form .ck-editor__main,
+  .form form .ck-content {
+    height: 200px;
+    width: 100%; }
 
 .modal .modal-container {
   padding: 20px; }

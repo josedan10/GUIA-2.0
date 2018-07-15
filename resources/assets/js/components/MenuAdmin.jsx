@@ -24,10 +24,10 @@ export default class MenuAdmin extends React.Component {
                     
                         <ul className="menu">
                             <li className="menu-item">
-                                <a href="#">Home</a>
+                                <a href="/admin/website/home">Home</a>
                             </li>
                             <li className="menu-item">
-                                <a href="#">Nosotros</a>
+                                <a href="/admin/website/nosotros">Nosotros</a>
                             </li>
                             <li className="menu-item">
                                 <a href="#">Contacto</a>

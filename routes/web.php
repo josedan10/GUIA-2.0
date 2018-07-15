@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('frontend.main');
+    $nosotros = App\Nosotros::find(1);
+    return view('frontend.main', ['nosotros' => $nosotros]);
 });
 
 Auth::routes();
@@ -52,7 +53,21 @@ Route::prefix('/admin')->group(function() {
 
     // Website
 
-    Route::view('website/home', 'backend.website.home')->name('website-home');
-    Route::view('website/nosotros', 'backend.website.nosotros')->name('website-nosotros');
-    Route::view('website/contacto', 'backend.website.contacto')->name('website-contacto');
+    Route::view('website/home', 'backend.web.home')->name('website-home');
+    Route::post('website/home', function() {
+        return redirect(route('website-home'));
+    })->name('website-home-edit');
+    Route::get('website/nosotros', function() {
+        $isNosotros = App\Nosotros::all();
+
+        $nosotros = ($isNosotros) ? App\Nosotros::find(1) : null;
+
+        return view('backend.web.nosotros', ['nosotros' => $nosotros]);
+
+    })->name('website-nosotros');
+    
+    Route::post('website/nosotros', function() {
+        return redirect(route('website-nosotros'));
+    })->name('website-nosotros-edit');
+    Route::view('website/contacto', 'backend.web.contacto')->name('website-contacto');
 });

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-<main class="admin-grid grid col-10 col-xl-9 col-xs-8 float-right">
+<main class="admin-grid grid col-10 float-right">
     <div class="outstanding-art"></div>
     <div class="outstanding-writer"></div>
     <div class="event-timer"></div>

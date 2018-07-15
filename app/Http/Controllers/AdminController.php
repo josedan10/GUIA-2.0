@@ -54,4 +54,16 @@ class AdminController extends Controller
         $user->save();
         return redirect(route('users'));
     }
+
+    public function updateNosotros(Request $request) {
+        $isNosotros = App\Nosotros::all();
+        $nosotros = ($isNosotros) ? App\Nosotros::find(1) : new App\Nosotros();
+
+        $nosotros->title = $request->title;
+        $nosotros->content = $request->content;
+
+        $nosotros->save();
+
+        return redirect(route('website-nosotros-edit'));
+    }
 }

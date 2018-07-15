@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-    <section class="container col-10 col-xl-9 col-xs-8 float-right users-list">
+    <section class="container col-10 float-right users-list">
         <header class="columns section-header text-primary">
             <h1 class="column col-11 d-inline-block d-flex">Usuarios</h1>
             <div class="column col-1 action d-flex">
