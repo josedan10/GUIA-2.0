@@ -40,7 +40,7 @@ Route::prefix('/admin')->group(function() {
         $user = App\User::find($id);
         $user->available = !$user->available;
         $user->save();
-        
+
         return redirect(route('users'));
     });
 
@@ -53,10 +53,22 @@ Route::prefix('/admin')->group(function() {
 
     // Website
 
-    Route::view('website/home', 'backend.web.home')->name('website-home');
+    //Home
+
+    Route::get('website/home', function() {
+        $isHome = App\Home::all();
+
+        $home = ($ishome) ? App\Home::find(1) : null;
+
+        return view('backend.web.home', ['home' => $home]);
+
+    })->name('website-home');
     Route::post('website/home', function() {
         return redirect(route('website-home'));
     })->name('website-home-edit');
+
+    //Nosotros
+
     Route::get('website/nosotros', function() {
         $isNosotros = App\Nosotros::all();
 
@@ -65,9 +77,10 @@ Route::prefix('/admin')->group(function() {
         return view('backend.web.nosotros', ['nosotros' => $nosotros]);
 
     })->name('website-nosotros');
-    
-    Route::post('website/nosotros', function() {
-        return redirect(route('website-nosotros'));
-    })->name('website-nosotros-edit');
+
+    Route::post('website/nosotros', 'AdminController@updateNosotros')->name('website-nosotros-edit');
+
+    //Contacto
+
     Route::view('website/contacto', 'backend.web.contacto')->name('website-contacto');
 });

@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Validator;
+
 use App\User;
+use App\Nosotros;
+use App\Home;
 
 class AdminController extends Controller
 {
@@ -55,15 +59,56 @@ class AdminController extends Controller
         return redirect(route('users'));
     }
 
+    public function updateHome(Request $request) {
+
+        // dd($request);
+        $isHome = Nosotros::all();
+        $home = ($isHome->isNotEmpty()) ? Home::find(1) : new Home();
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|unique:home|max:255',
+            'content' => 'required',
+        ]);
+
+        // TODO: send errors
+
+        if ($validator->fails()) {
+            return redirect(route('website-home'))
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+            $home->title = $request->title;
+            $home->content = $request->content;
+
+            $home->save();
+        }
+
+        return redirect(route('website-home'));
+    }
+
     public function updateNosotros(Request $request) {
-        $isNosotros = App\Nosotros::all();
-        $nosotros = ($isNosotros) ? App\Nosotros::find(1) : new App\Nosotros();
 
-        $nosotros->title = $request->title;
-        $nosotros->content = $request->content;
+        $isNosotros = Nosotros::all();
+        $nosotros = ($isNosotros->isNotEmpty()) ? Nosotros::find(1) : new Nosotros();
 
-        $nosotros->save();
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|unique:nosotros|max:255',
+            'content' => 'required',
+        ]);
 
-        return redirect(route('website-nosotros-edit'));
+        // TODO: send errors
+
+        if ($validator->fails()) {
+            return redirect(route('website-nosotros'))
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+            $nosotros->title = $request->title;
+            $nosotros->content = $request->content;
+
+            $nosotros->save();
+        }
+
+        return redirect(route('website-nosotros'));
     }
 }

@@ -6,16 +6,22 @@
         </header>
         <hr />
         <div class="container form">
+            @if($errors->any())
+                @foreach ($errors as $error)
+                    <span class="error">$error</span>
+                @endforeach
+            @endif
             <div class="columns">
                 <div class="col col-12">
                     <form action="{{ route('website-nosotros-edit') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="title" class="form-label">Título</label>
-                            <input type="text" class="form-input" placeholder="Título" @if(isset($nosotros)) value="{{ $nosotros->title }}" @endif>
+                            <input type="text" name="title" class="form-input" required placeholder="Título" @if(isset($nosotros)) value="{{ $nosotros->title }}" @endif>
                         </div>
                         <div class="form-group">
                             <label for="content" class="form-label">Contenido</label>
-                            <textarea class="form-input" placeholder="Contenido" rows="8">@if(isset($nosotros)) {{ $nosotros->content }}@endif</textarea>
+                            <textarea name="content" class="form-input" required placeholder="Contenido" rows="8">@if(isset($nosotros)) {{ $nosotros->content }}@endif</textarea>
                         </div>
                         <input type="submit" value="Editar" class="btn btn-primary">
                     </form>
