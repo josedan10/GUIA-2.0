@@ -25,7 +25,7 @@ export default class Form extends React.Component {
             this.props.toogleRocket("resting");
         else if (this.state.canSend)
             this.props.toogleRocket("takeoff");
-        else 
+        else
             this.props.toogleRocket("initializing");
     }
 
@@ -71,7 +71,7 @@ export default class Form extends React.Component {
 
                 // Basic validate: Can't exist empty inputs
                 if (!input.value.length) {
-                    
+
                     if (!input.classList.contains("error")) input.classList.add("is-error");
 
                     errors[input.id] = "Debes completar este campo";
@@ -85,8 +85,8 @@ export default class Form extends React.Component {
                         if (reName.test(input.value)){
 
                             if (!input.classList.contains("error")) input.classList.add("is-error");
-                            
-                            errors = {...errors, name: "No uses caracteres especiales"};                            
+
+                            errors = {...errors, name: "No uses caracteres especiales"};
                             error++;
                         }
 
@@ -94,10 +94,10 @@ export default class Form extends React.Component {
                     case "email":
                         // String email validation
                         if (!reEmail.test(input.value)){
-                            
+
                             if (!input.classList.contains("error")){
                                 input.classList.add("is-error");
-                            } 
+                            }
 
                             errors = {...errors, email: "Introduce un formato válido para un correo"};
                             error++;
@@ -122,14 +122,16 @@ export default class Form extends React.Component {
 
             this.setState({...this.state, canSend: true});
 
+            e.preventDefault();
+
             // axios help to send mail without reload the page
         }
 
-        
+
     }
 
     render() {
-        
+
         return (
             <div className="form-container">
                 <form className="" onChange={this.handleFormChange.bind(this)} onSubmit={this.handleSubmit.bind(this)}>
@@ -143,7 +145,7 @@ export default class Form extends React.Component {
                         <label className="form-label" htmlFor="email">Correo</label>
                         <input className="form-input"  name="email" id="email" type="email" placeholder="mi-correo@mail.com" />
                         <span className="form-input-hint">{this.state.errors.email}</span>
-                    </div>  
+                    </div>
 
                     <div className="form-group">
                         <label className="form-label" htmlFor="msg">Cuéntanos tus dudas</label>
@@ -151,8 +153,8 @@ export default class Form extends React.Component {
                         <span className="form-input-hint">{this.state.errors.msg}</span>
                     </div>
 
-                    
-                    <input className="btn centered" type="submit" value="Enviar"/>                
+
+                    <input className="btn centered" type="submit" value="Enviar"/>
 
                 </form>
             </div>

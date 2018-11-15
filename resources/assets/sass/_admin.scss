@@ -31,18 +31,18 @@
             border: none;
             box-shadow: none;
             min-width: auto;
-    
+
             .menu-item {
-    
+
                 a {
                     color: #121212;
-        
+
                     &:hover {
                         text-decoration: none;
                         color: $primary-color;
                     }
                 }
-            }    
+            }
         }
     }
 
@@ -60,7 +60,7 @@
     grid-template-rows: repeat(7, 10vh);
     grid-template-columns: repeat(6, calc(100% / 7));
     grid-auto-rows: 10vh;
-    grid-gap: 10px; 
+    grid-gap: 10px;
 
     & > * {
         height: 100%;
@@ -73,12 +73,52 @@
 .event-timer {
     grid-row: span 2;
     grid-column: span 2;
-    background-color: #000;
+    border: solid 1px #c2c2c2;
+    box-shadow: 2px 2px 5px #6b6a6a;
+}
+
+.outstanding-art,
+.outstanding-writer {
+    padding: 1rem;
+
+    .title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .content-title {
+        font-size: 0.7rem;
+    }
+
+    span {
+        width: 100%;
+        display: block;
+        padding: 0.2rem;
+    }
 }
 
 .event-timeline,
 .form-container {
     grid-row: 3 / span 6;
+}
+
+.timer {
+    width: 100%;
+    height: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+
+    .module {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+
+        span:last-child {
+            font-size: 2rem;
+        }
+
+    }
 }
 
 .form-container {

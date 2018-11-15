@@ -5,7 +5,7 @@
     "start": "webpack --mode development",
     "test": "webpack --watch --mode development",
     "watch-sass": "nodemon -e scss -x \"npm run build-css\"",
-    "build-css": "node-sass --include-path scss resources/assets/sass/app.scss public/css/backend.css",
+    "build-css": "concurrently \"node-sass --include-path scss resources/assets/sass/backend.scss public/css/backend.css\" \"node-sass --include-path scss resources/assets/sass/frontend.scss public/css/main.css\"",
     "development": "npm run build-css && npm run test",
     "web-prod": "webpack --mode production",
     "server": "webpack-dev-server --mode development --open",
@@ -72,6 +72,10 @@
     "aos": "^2.3.0",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "react-bootstrap": "^0.32.1"
+    "concurrently": "^4.0.1",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
+    "react-bootstrap": "^0.32.1",
+    "react-particles-js": "^2.3.0",
+    "spectre.css": "^0.5.3"
   }
 }

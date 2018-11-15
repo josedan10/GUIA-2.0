@@ -63,6 +63,7 @@ Route::prefix('/admin')->group(function() {
         return view('backend.web.home', ['home' => $home]);
 
     })->name('website-home');
+    
     Route::post('website/home', function() {
         return redirect(route('website-home'));
     })->name('website-home-edit');
@@ -83,4 +84,8 @@ Route::prefix('/admin')->group(function() {
     //Contacto
 
     Route::view('website/contacto', 'backend.web.contacto')->name('website-contacto');
+
+    // Sirius Blog
+
+    Route::view('website/sirius', 'backend.sirius.index')->name('sirius-index');
 });

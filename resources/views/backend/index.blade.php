@@ -2,8 +2,16 @@
 @section('content')
 <main class="admin-grid grid col-10 float-right">
     <div class="outstanding-art"></div>
-    <div class="outstanding-writer"></div>
-    <div class="event-timer"></div>
+    <div class="outstanding-writer">
+        <div class="title">
+            POST OF THE WEEK
+        </div>
+        <div class="content bg-secondary">
+            <span class="content-title"> La era espacial </span>
+            <span class="content-author"><b>Author:</b> José Daniel Quintero</span>
+        </div>
+    </div>
+    <div id="timer" class="bg-secondary event-timer"></div>
     <div class="event-timeline bg-secondary">
         <div class="panel">
             <div class="panel-header">
@@ -142,7 +150,7 @@
             <div class="panel-footer">
                 <input class="btn btn-primary float-right" type="submit" value="Enviar">
             </div>
-        </div>        
+        </div>
     </div>
 </main>
 @endsection

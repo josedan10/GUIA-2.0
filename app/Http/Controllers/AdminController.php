@@ -98,6 +98,8 @@ class AdminController extends Controller
 
         // TODO: send errors
 
+        // Fix validator fails always bug 
+
         if ($validator->fails()) {
             return redirect(route('website-nosotros'))
                         ->withErrors($validator)
@@ -107,6 +109,7 @@ class AdminController extends Controller
             $nosotros->content = $request->content;
 
             $nosotros->save();
+            dd($nosotros);
         }
 
         return redirect(route('website-nosotros'));

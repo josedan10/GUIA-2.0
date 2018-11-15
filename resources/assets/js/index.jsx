@@ -13,3 +13,6 @@ ReactDOM.render(
     <Rocket />,
     document.getElementById("contact")
 );
+
+document.addEventListener("DOMContentLoaded", e => console.log(e));
+window.addEventListener('load', (e) => console.log("Cargando la página\n", e));
