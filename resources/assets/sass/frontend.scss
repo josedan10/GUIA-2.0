@@ -7,8 +7,8 @@
 // Variables
 @import "variables";
 @import 'icons';
-@import 'spectre/src/spectre';
-@import 'spectre/src/spectre-icons';
+@import 'node_modules/spectre.css/src/spectre';
+@import "node_modules/spectre.css/src/spectre-icons";
 
 * {
   padding: 0;

@@ -16,6 +16,12 @@ Route::get('/', function () {
     return view('frontend.main', ['nosotros' => $nosotros]);
 });
 
+Route::get('/info', function () {
+    return response()->json([
+        'stuff' => phpinfo()
+    ]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

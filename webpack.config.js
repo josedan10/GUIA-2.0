@@ -1,5 +1,5 @@
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // const webpack = require('webpack');
 
@@ -13,30 +13,30 @@ module.exports = (env) => {
             timer: './resources/assets/js/components/Timer.jsx'
 		},
 
-		output: {
-			path: path.resolve(__dirname, 'public/js/'),
-			publicPath: '/public/js/',
-			filename: '[name].min.js' // Archivo de salida
-		},
+    output: {
+      path: path.resolve(__dirname, 'public/js/'),
+      publicPath: '/public/js/',
+      filename: '[name].min.js' // Archivo de salida
+    },
 
-		resolve: {
-			extensions: ['.js', '.jsx']
-		},
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
 
-		module: {
-			rules: [
-				{
-					test: /\.jsx$/,
-					exclude: /(node_modules|bower_components)/,
-					use: [{
-						loader: 'babel-loader',
-						options: {
-							presets: ['react', 'env', 'es2015', 'stage-0']
-						}
-					}]
-				}
-			]
-		},
+    module: {
+      rules: [
+        {
+          test: /\.jsx$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [{
+            loader: 'babel-loader',
+            options: {
+              presets: ['react', 'env', 'es2015', 'stage-0']
+            }
+          }]
+        }
+      ]
+    },
 
 		devServer: {
 			contentBase: path.join(__dirname, './'),
