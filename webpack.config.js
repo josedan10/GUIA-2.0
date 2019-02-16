@@ -9,7 +9,8 @@ module.exports = (env) => {
 		entry: {
 			// config: './resources/assets/js/config.js',
 			index: './resources/assets/js/index.jsx',
-			backend: './resources/assets/js/backend.jsx'
+            backend: './resources/assets/js/backend.jsx',
+            timer: './resources/assets/js/components/Timer.jsx'
 		},
 
 		output: {
@@ -39,11 +40,11 @@ module.exports = (env) => {
 
 		devServer: {
 			contentBase: path.join(__dirname, './'),
-			historyApiFallback: true,	
+			historyApiFallback: true,
 			port: 8080
 		},
 
 		devtool: 'inline-source-map',
 	}
-	
+
 };

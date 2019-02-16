@@ -10,18 +10,18 @@ export default class MenuAdmin extends React.Component {
             <ul className="menu">
                 <li className="menu-item">
                     <a href="/admin">
-                        <i className="icon icon-2x icon-dashboard"></i> 
+                        <i className="icon icon-2x icon-dashboard"></i>
                         <span className="hide-md"> Dashboard</span>
                     </a>
                 </li>
-                <li className="menu-item">                                    
+                <li className="menu-item">
                     <div className="dropdown d-inline-block">
                         <a href="#" className="dropdown-toggle" tabIndex="0">
-                            <i className="icon icon-2x icon-website"></i> 
+                            <i className="icon icon-2x icon-website"></i>
                             <span className="hide-md"> Website</span>
                             <i className="icon icon-caret"></i>
                         </a>
-                    
+
                         <ul className="menu">
                             <li className="menu-item">
                                 <a href="/admin/website/home">Home</a>
@@ -33,11 +33,11 @@ export default class MenuAdmin extends React.Component {
                                 <a href="#">Contacto</a>
                             </li>
                         </ul>
-                    </div>                             
+                    </div>
                 </li>
                 <li className="menu-item">
-                    <a href="#">                                    
-                        <i className="icon icon-2x icon-edit2"></i> 
+                    <a href="/admin/sirius">
+                        <i className="icon icon-2x icon-edit2"></i>
                         <span className="hide-md"> Sirius</span>
                     </a>
                 </li>

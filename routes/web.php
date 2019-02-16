@@ -20,8 +20,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Admin views
+
 Route::prefix('/admin')->group(function() {
     Route::get('/','AdminController@index')->name('admin');
+
+    // Users
     Route::get('/users', 'AdminController@users')->name('users');
 
     Route::get('/users/add', function() {
@@ -63,7 +67,7 @@ Route::prefix('/admin')->group(function() {
         return view('backend.web.home', ['home' => $home]);
 
     })->name('website-home');
-    
+
     Route::post('website/home', function() {
         return redirect(route('website-home'));
     })->name('website-home-edit');
@@ -87,5 +91,5 @@ Route::prefix('/admin')->group(function() {
 
     // Sirius Blog
 
-    Route::view('website/sirius', 'backend.sirius.index')->name('sirius-index');
+    Route::view('sirius', 'backend.sirius.index')->name('sirius-index');
 });

@@ -33,8 +33,10 @@
                     </figure>
                     <div class="panel-title text-center"><h5>{{ Auth::user()->name }}</h5></div>
                 </div>
+
                 <div id="admin-panel" class="panel-body d-flex">
                 </div>
+
                 <div class="panel-footer">
                     <a href="{ route('logout') }"
                         onclick="event.preventDefault();

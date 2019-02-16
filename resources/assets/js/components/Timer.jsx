@@ -72,3 +72,8 @@ export default class Timer extends Component {
         )
     }
 }
+
+ReactDOM.render(
+    <Timer />,
+    document.getElementById('timer')
+);

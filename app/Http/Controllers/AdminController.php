@@ -92,13 +92,15 @@ class AdminController extends Controller
         $nosotros = ($isNosotros->isNotEmpty()) ? Nosotros::find(1) : new Nosotros();
 
         $validator = Validator::make($request->all(), [
-            'title' => 'required|unique:nosotros|max:255',
+            'title' => 'required|max:255',
             'content' => 'required',
         ]);
 
         // TODO: send errors
 
-        // Fix validator fails always bug 
+        // Fix validator fails always bug
+
+        // dd($validator->fails());
 
         if ($validator->fails()) {
             return redirect(route('website-nosotros'))
@@ -109,7 +111,6 @@ class AdminController extends Controller
             $nosotros->content = $request->content;
 
             $nosotros->save();
-            dd($nosotros);
         }
 
         return redirect(route('website-nosotros'));
